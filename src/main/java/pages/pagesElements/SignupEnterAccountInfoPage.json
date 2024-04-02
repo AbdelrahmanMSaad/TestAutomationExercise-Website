@@ -1,0 +1,199 @@
+[
+  {
+    "elementName": "enterAccountInfoText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//b[contains(.,'Enter Account Information')]"
+  },
+  {
+    "elementName": "titleText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Title')]"
+  },
+  {
+    "elementName": "mrRadioBtn",
+    "locatorMethod": "id",
+    "locatorValue": "uniform-id_gender1"
+  },
+  {
+    "elementName": "mrsRadioBtn",
+    "locatorMethod": "id",
+    "locatorValue": "uniform-id_gender2"
+  },
+  {
+    "elementName": "nameText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Name ')]"
+  },
+  {
+    "elementName": "nameInput",
+    "locatorMethod": "id",
+    "locatorValue": "name"
+  },
+  {
+    "elementName": "emailText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Email ')]"
+  },
+  {
+    "elementName": "emailInput",
+    "locatorMethod": "id",
+    "locatorValue": "email"
+  },
+  {
+    "elementName": "passwordText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Password ')]"
+  },
+  {
+    "elementName": "passwordInput",
+    "locatorMethod": "id",
+    "locatorValue": "password"
+  },
+  {
+    "elementName": "dateOfBirthText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Date of Birth')]"
+  },
+  {
+    "elementName": "daysDropdownList",
+    "locatorMethod": "id",
+    "locatorValue": "days"
+  },
+  {
+    "elementName": "monthsDropdownList",
+    "locatorMethod": "id",
+    "locatorValue": "months"
+  },
+  {
+    "elementName": "yearsDropdownList",
+    "locatorMethod": "id",
+    "locatorValue": "years"
+  },
+  {
+    "elementName": "scrollToTopBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//i[contains(@class,'fa fa-angle-up')]"
+  },
+  {
+    "elementName": "newsletterCheckbox",
+    "locatorMethod": "id",
+    "locatorValue": "newsletter"
+  },
+  {
+    "elementName": "receiveOffersCheckbox",
+    "locatorMethod": "id",
+    "locatorValue": "optin"
+  },
+  {
+    "elementName": "addressInfoText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Address Information')]"
+  },
+  {
+    "elementName": "firstNameText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'First name ')]"
+  },
+  {
+    "elementName": "firstNameInput",
+    "locatorMethod": "id",
+    "locatorValue": "first_name"
+  },
+  {
+    "elementName": "lastNameText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Last name ')]"
+  },
+  {
+    "elementName": "lastNameInput",
+    "locatorMethod": "id",
+    "locatorValue": "last_name"
+  },
+  {
+    "elementName": "companyText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Company')]"
+  },
+  {
+    "elementName": "companyInput",
+    "locatorMethod": "id",
+    "locatorValue": "company"
+  },
+  {
+    "elementName": "address1Text",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Address ')]"
+  },
+  {
+    "elementName": "address1Input",
+    "locatorMethod": "id",
+    "locatorValue": "address1"
+  },
+  {
+    "elementName": "address2Text",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Address 2')]"
+  },
+  {
+    "elementName": "address2Input",
+    "locatorMethod": "id",
+    "locatorValue": "address2"
+  },
+  {
+    "elementName": "countryText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Country ')]"
+  },
+  {
+    "elementName": "countryDropdownList",
+    "locatorMethod": "id",
+    "locatorValue": "country"
+  },
+  {
+    "elementName": "stateText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'State ')]"
+  },
+  {
+    "elementName": "stateInput",
+    "locatorMethod": "id",
+    "locatorValue": "state"
+  },
+  {
+    "elementName": "cityText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'City ')]"
+  },
+  {
+    "elementName": "cityInput",
+    "locatorMethod": "id",
+    "locatorValue": "city"
+  },
+  {
+    "elementName": "zipcodeText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Zipcode ')]"
+  },
+  {
+    "elementName": "zipcodeInput",
+    "locatorMethod": "id",
+    "locatorValue": "zipcode"
+  },
+  {
+    "elementName": "mobileNumberText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//label[contains(.,'Mobile Number  ')]"
+  },
+  {
+    "elementName": "mobileNumberInput",
+    "locatorMethod": "id",
+    "locatorValue": "mobile_number"
+  },
+  {
+    "elementName": "submitBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//button[contains(@data-qa,'create-account')]"
+  }
+
+
+]

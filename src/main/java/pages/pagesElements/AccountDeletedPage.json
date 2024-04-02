@@ -1,0 +1,12 @@
+[
+  {
+    "elementName": "AccountDeletedText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//h2[contains(.,'Account Deleted!')]"
+  },
+  {
+    "elementName": "continueBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@data-qa,'continue')]"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "elementName": "loginText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//h2[contains(text(),'Login to your account')]"
+  },
+  {
+    "elementName": "loginEmailInput",
+    "locatorMethod": "xpath",
+    "locatorValue": "//input[contains(@data-qa,'login-email')]"
+  },
+  {
+    "elementName": "loginPasswordInput",
+    "locatorMethod": "xpath",
+    "locatorValue": "//input[contains(@data-qa,'login-password')]"
+  },
+  {
+    "elementName": "loginBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//button[contains(@data-qa,'login-button')]"
+  },
+  {
+    "elementName": "signupText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//h2[contains(text(),'New User Signup!')]"
+  },
+  {
+    "elementName": "signupNameInput",
+    "locatorMethod": "xpath",
+    "locatorValue": "//input[contains(@data-qa,'signup-name')]"
+  },
+  {
+    "elementName": "signupEmailInput",
+    "locatorMethod": "xpath",
+    "locatorValue": "//input[contains(@data-qa,'signup-email')]"
+  },
+  {
+    "elementName": "signupBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//button[contains(@data-qa,'signup-button')]"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "elementName": "webSiteLogo",
+    "locatorMethod": "className",
+    "locatorValue": "logo"
+  },
+  {
+    "elementName": "homeBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[@href='/'][contains(.,'Home')]"
+  },
+  {
+    "elementName": "productsBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/products')]"
+  },
+  {
+    "elementName": "cartBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/view_cart')]"
+  },
+  {
+    "elementName": "singUpLoginBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/login')]"
+  },
+  {
+    "elementName": "logoutBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/logout')]"
+  },
+  {
+    "elementName": "deleteAccountBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/delete_account')]"
+  },
+  {
+    "elementName": "loggedInAsText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//i[contains(@class,'fa fa-user')]"
+  },
+  {
+    "elementName": "testCasesBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@href,'/test_cases')]"
+  },
+  {
+    "elementName": "carouselSection",
+    "locatorMethod": "id",
+    "locatorValue": "slider-carousel"
+  },
+  {
+    "elementName": "carouselSectionLeftBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@class,'left control-carousel hidden-xs')]"
+  },
+  {
+    "elementName": "carouselSectionRightBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@class,'right control-carousel hidden-xs')]"
+  }
+]

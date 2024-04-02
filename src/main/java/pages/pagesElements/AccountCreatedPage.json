@@ -1,0 +1,12 @@
+[
+  {
+    "elementName": "AccountCreatedText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//h2[contains(.,'Account Created!')]"
+  },
+  {
+    "elementName": "continueBtn",
+    "locatorMethod": "xpath",
+    "locatorValue": "//a[contains(@data-qa,'continue')]"
+  }
+]
