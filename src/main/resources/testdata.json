@@ -2,8 +2,8 @@
   {
     "testCase": {
       "testCaseName": "test_1",
-      "name": "Abdulrahman Saad",
-      "email": "test123123@test.com",
+      "name": "Abdulrahman M Saad",
+      "email": "test123dsds1223@test.com",
       "password": "123456",
       "birthDay": "7",
       "birthMonth": "August",
@@ -24,7 +24,7 @@
     "testCase": {
       "testCaseName": "test_2",
       "name": "Abdulrahman Saad",
-      "email": "test123123@test.com",
+      "email": "testerer@test.com",
       "password": "123456",
       "birthDay": "7",
       "birthMonth": "August",
@@ -39,6 +39,27 @@
       "city": "Alexandria",
       "zipcode": "123456",
       "mobile": "+201111056630"
+    }
+  },
+  {
+    "testCase": {
+      "testCaseName": "test_3",
+      "name": "Abdulrahman Saad",
+      "email": "test5123123@test.com",
+      "password": "123456",
+      "birthDay": "",
+      "birthMonth": "",
+      "birthYear": "",
+      "firstName": "",
+      "lastName": "",
+      "company": "",
+      "address1":"",
+      "address2": "",
+      "country": "",
+      "state": "",
+      "city": "",
+      "zipcode": "",
+      "mobile": ""
     }
   }
 ]

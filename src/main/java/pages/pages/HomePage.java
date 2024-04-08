@@ -57,12 +57,14 @@ public class HomePage extends Base {
 	private final By carouselSectionRightBtn_xpath = By.xpath("//a[contains(@class,'right control-carousel hidden-xs')]");
 	public String carouselSectionRightBtn = "carouselSectionRightBtn";
   
-	public WebElement getElement(String webElement){
-		if (webElement.toLowerCase().contains("btn")){
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementsMap.get(webElement));
-		}else{
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementsMap.get(webElement));
-		}
+	public WebElement getElement(String elementKey) {
+		By elementLocator = elementsMap.get(elementKey);
+		if (elementLocator != null) {
+			return elementKey.toLowerCase().contains("btn") ?
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementLocator) :
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementLocator);
+			}
+		return null;
 	}
  
 	private void defineAllElements() {

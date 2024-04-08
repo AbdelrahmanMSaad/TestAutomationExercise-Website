@@ -138,12 +138,14 @@ public class SignupEnterAccountInfoPage extends Base {
 	private final By submitBtn_xpath = By.xpath("//button[contains(@data-qa,'create-account')]");
 	public String submitBtn = "submitBtn";
   
-	public WebElement getElement(String webElement){
-		if (webElement.toLowerCase().contains("btn")){
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementsMap.get(webElement));
-		}else{
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementsMap.get(webElement));
-		}
+	public WebElement getElement(String elementKey) {
+		By elementLocator = elementsMap.get(elementKey);
+		if (elementLocator != null) {
+			return elementKey.toLowerCase().contains("btn") ?
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementLocator) :
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementLocator);
+			}
+		return null;
 	}
  
 	private void defineAllElements() {

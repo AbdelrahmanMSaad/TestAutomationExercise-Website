@@ -24,12 +24,14 @@ public class ProductsPage extends Base {
 	private final By searchInputField_name = By.name("search");
 	public String searchInputField = "searchInputField";
   
-	public WebElement getElement(String webElement){
-		if (webElement.toLowerCase().contains("btn")){
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementsMap.get(webElement));
-		}else{
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementsMap.get(webElement));
-		}
+	public WebElement getElement(String elementKey) {
+		By elementLocator = elementsMap.get(elementKey);
+		if (elementLocator != null) {
+			return elementKey.toLowerCase().contains("btn") ?
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementLocator) :
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementLocator);
+			}
+		return null;
 	}
  
 	private void defineAllElements() {

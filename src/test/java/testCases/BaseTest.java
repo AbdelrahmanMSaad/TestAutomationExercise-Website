@@ -23,15 +23,7 @@ public class BaseTest {
     public void beforeClass() {
     }
 
-    @BeforeMethod
-    public void setUp() {
 
-    }
-
-    @AfterMethod
-    public void tearDown() {
-//        Navigation.closeBrowser();
-    }
 
     @AfterClass
     public void afterClass(){

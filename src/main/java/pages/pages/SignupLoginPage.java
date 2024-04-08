@@ -45,12 +45,20 @@ public class SignupLoginPage extends Base {
 	private final By signupBtn_xpath = By.xpath("//button[contains(@data-qa,'signup-button')]");
 	public String signupBtn = "signupBtn";
   
-	public WebElement getElement(String webElement){
-		if (webElement.toLowerCase().contains("btn")){
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementsMap.get(webElement));
-		}else{
-			return AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementsMap.get(webElement));
-		}
+	private final By invalidLoginText_xpath = By.xpath("//p[contains(@style,'red')][contains(.,'Your email or password is incorrect!')]");
+	public String invalidLoginText = "invalidLoginText";
+  
+	private final By invalidSignupText_xpath = By.xpath("//p[contains(@style,'red')][contains(.,'Email Address already exist!')]");
+	public String invalidSignupText = "invalidSignupText";
+  
+	public WebElement getElement(String elementKey) {
+		By elementLocator = elementsMap.get(elementKey);
+		if (elementLocator != null) {
+			return elementKey.toLowerCase().contains("btn") ?
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementLocator) :
+				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementLocator);
+			}
+		return null;
 	}
  
 	private void defineAllElements() {
@@ -62,6 +70,8 @@ public class SignupLoginPage extends Base {
 		this.elementsMap.put(signupNameInput, signupNameInput_xpath);
 		this.elementsMap.put(signupEmailInput, signupEmailInput_xpath);
 		this.elementsMap.put(signupBtn, signupBtn_xpath);
+		this.elementsMap.put(invalidLoginText, invalidLoginText_xpath);
+		this.elementsMap.put(invalidSignupText, invalidSignupText_xpath);
 	}
  
 

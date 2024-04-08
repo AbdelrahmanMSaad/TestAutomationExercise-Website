@@ -17,7 +17,7 @@ public class Navigation extends Base{
     }
 
     private static void initializeAutomatedActions(){
-        new AutomatedActions(webDriver);
+        new AutomatedActions(Base.webDriver);
     }
 
     private static void initializeNavigation(){
@@ -31,10 +31,11 @@ public class Navigation extends Base{
             e.printStackTrace();
         }
         if(Base.browser.equalsIgnoreCase(Browsers.chrome)){
-            webDriver = Utilities.openChrome();
+            Base.webDriver = Utilities.openChrome();
         }else if(Base.browser.equalsIgnoreCase(Browsers.firefox)){
-            webDriver = Utilities.openFirefox();
+            Base.webDriver = Utilities.openFirefox();
         }
+
         Navigation.initializeNavigation();
         Navigation.initializeAutomatedActions();
 
@@ -75,6 +76,11 @@ public class Navigation extends Base{
 
     public static HomePage navigateToHomePageFromAccountDeletedPage(AccountDeletedPage accountDeletedPage){
         AutomatedActions.ClickingActions.clickOnElement(accountDeletedPage.getElement(accountDeletedPage.continueBtn));
+        return new HomePage(Navigation.webDriver);
+    }
+
+    public static HomePage navigateToHomePageFromSignupLoginPage(SignupLoginPage signupLoginPage){
+        AutomatedActions.ClickingActions.clickOnElement(signupLoginPage.getElement(signupLoginPage.loginBtn));
         return new HomePage(Navigation.webDriver);
     }
 

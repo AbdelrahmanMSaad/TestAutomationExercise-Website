@@ -38,5 +38,15 @@
     "elementName": "signupBtn",
     "locatorMethod": "xpath",
     "locatorValue": "//button[contains(@data-qa,'signup-button')]"
+  },
+  {
+    "elementName": "invalidLoginText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//p[contains(@style,'red')][contains(.,'Your email or password is incorrect!')]"
+  },
+  {
+    "elementName": "invalidSignupText",
+    "locatorMethod": "xpath",
+    "locatorValue": "//p[contains(@style,'red')][contains(.,'Email Address already exist!')]"
   }
 ]
