@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 07 07:05:34 EET 2024","Sun Apr 07 07:05:47 EET 2024","13013","All Test Suite","C:/Users/AbdElRahman/IdeaProjects/Selenium_Java_Maven_TestNG_ExtentReports_POM","testCases.TestAutomationExercise","testCases.TestAutomationExercise","test_1","test_1","Test Case 1: Register User"
+"passed","Sun Apr 07 07:05:53 EET 2024","Sun Apr 07 07:06:11 EET 2024","18630","All Test Suite","C:/Users/AbdElRahman/IdeaProjects/Selenium_Java_Maven_TestNG_ExtentReports_POM","testCases.TestAutomationExercise","testCases.TestAutomationExercise","test_2","test_2","Test Case 2: Login User with correct email and password"
