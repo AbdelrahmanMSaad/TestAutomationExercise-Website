@@ -1,6 +1,5 @@
 package base;
 
-import org.checkerframework.checker.units.qual.N;
 import org.openqa.selenium.WebDriver;
 import pages.pages.*;
 import utils.AutomatedActions;
@@ -12,7 +11,7 @@ import java.io.IOException;
 public class Navigation extends Base{
     private static WebDriver webDriver;
 
-    public Navigation(WebDriver webDriver){
+    public Navigation(){
         Navigation.webDriver = Base.webDriver;
     }
 
@@ -21,7 +20,7 @@ public class Navigation extends Base{
     }
 
     private static void initializeNavigation(){
-        new Navigation(Base.webDriver);
+        new Navigation();
     }
 
     public static HomePage openHomePage() {

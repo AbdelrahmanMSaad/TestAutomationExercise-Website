@@ -1,9 +1,6 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import pages.pages.HomePage;
-import pages.pages.SignupLoginPage;
-import utils.AutomatedActions;
 import utils.Utilities;
 
 import java.io.IOException;

@@ -1,8 +1,5 @@
 package utils;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 public class PageUtils {
 
 //    public WebElement getElement(String webElement,){

@@ -1,6 +1,5 @@
 package testCases;
 
-import base.Navigation;
 import org.testng.annotations.*;
 import pages.pages.HomePage;
 
