@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Selenium_Java_Maven_TestNG_ExtentReports_POM" />
+        <module name="TestAutomationExercise-Website" />
       </profile>
     </annotationProcessing>
   </component>

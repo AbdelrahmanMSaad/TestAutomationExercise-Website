@@ -1,89 +1,104 @@
 package base;
 
+import getDirectories.GetDirectories;
+import handlingConfigFile.Config;
+import initializers.Initializers;
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import pages.pages.*;
-import utils.AutomatedActions;
-import utils.Browsers;
-import utils.Utilities;
+import AutomatedActions.AutomatedActions;
+import Browsers.*;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Navigation extends Base{
-    private static WebDriver webDriver;
-
+public class Navigation {
+    protected WebDriver webDriver;
     public Navigation(){
-        Navigation.webDriver = Base.webDriver;
     }
 
-    private static void initializeAutomatedActions(){
-        new AutomatedActions(Base.webDriver);
+    public HomePage openHomePage() {
+        Initializers.initializeConfigFile();
+        if(Config.browser.equalsIgnoreCase(Browsers.chrome)){
+            this.webDriver = OpenBrowsers.openChrome();
+        }else if(Config.browser.equalsIgnoreCase(Browsers.firefox)){
+            this.webDriver = OpenBrowsers.openFirefox();
+        }
+        new Initializers();
+        AutomatedActions automatedActions = new AutomatedActions(this.webDriver);
+        automatedActions.waitAndVisibilityActions().setImplicitWait();
+        automatedActions.browsersActions().maximizeBrowserPage();
+        automatedActions.browsersActions().openURL(Config.uRL);
+        return new HomePage(this.webDriver);
     }
 
-    private static void initializeNavigation(){
-        new Navigation();
+    public ProductsPage navigateToProductsPageFromHomePage(HomePage homePage){
+        return homePage.homePageActions().clickOnProductsBtn();
     }
 
-    public static HomePage openHomePage() {
+    public SignupLoginPage navigateToSignupLoginPageFromHomePage(HomePage homePage){
+        return homePage.homePageActions().clickOnSignUpLoginBtn();
+    }
+
+    public AccountDeletedPage navigateToAccountDeletedPageFromHomePage(HomePage homePage){
+        return homePage.homePageActions().clickOnDeleteAccountPage();
+    }
+
+    public SignupLoginPage navigateToSignupLoginPageAfterLogoutFromHomePage(HomePage homePage) {
+        return homePage.homePageActions().clickOnLogoutBtn();
+    }
+
+    public SignupEnterAccountInfoPage navigateToSignupEnterAccountInfoPageFromSignupLoginPage(SignupLoginPage signupLoginPage){
+        return signupLoginPage.signupLoginPageActions().clickOnSignupBtn();
+    }
+    public AccountCreatedPage navigateToAccountCreatedPageFromSignupEnterAccountInfoPage(SignupEnterAccountInfoPage signupEnterAccountInfoPage){
+        return signupEnterAccountInfoPage.signupEnterAccountInfoPageActions().clickOnSubmitBtn();
+    }
+    public HomePage navigateToHomePageFromAccountCreatedPage(AccountCreatedPage accountCreatedPage){
+        return accountCreatedPage.accountCreatedPageActions().clickOnContinueBtn();
+    }
+
+    public HomePage navigateToHomePageFromAccountDeletedPage(AccountDeletedPage accountDeletedPage){
+        return accountDeletedPage.accountDeletedPageActions().clickOnContinueBtn();
+    }
+
+    public HomePage navigateToHomePageFromSignupLoginPageAfterLogin(SignupLoginPage signupLoginPage){
+        return signupLoginPage.signupLoginPageActions().clickOnLoginBtn();
+    }
+
+    public void closeBrowser(){
         try {
-            Base.initializeConfigurations();
+            if (this.webDriver != null) {
+                this.webDriver.quit(); // Close the browser window and terminate the WebDriver session
+            }
+        } catch (Exception e) {
+            // Handle any exceptions that occur during shutdown
+            System.err.println("Error occurred during browser shutdown: " + e.getMessage());
+        }
+    }
+
+    public void takeScreenShot(String testName) {
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
+        String screenshotName = testName + "_" + timestamp + ".png";
+        String screenshotDestPath = GetDirectories.getScreenshotsDirectory() + File.separator + screenshotName;
+        File screenshotFile = ((TakesScreenshot) this.webDriver).getScreenshotAs(OutputType.FILE);
+
+        try {
+            Files.copy(screenshotFile.toPath(), Paths.get(screenshotDestPath));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(Base.browser.equalsIgnoreCase(Browsers.chrome)){
-            Base.webDriver = Utilities.openChrome();
-        }else if(Base.browser.equalsIgnoreCase(Browsers.firefox)){
-            Base.webDriver = Utilities.openFirefox();
-        }
-
-        Navigation.initializeNavigation();
-        Navigation.initializeAutomatedActions();
-
-        webDriver.get(Base.uRL);
-
-        Utilities.maximizePage(webDriver);
-        AutomatedActions.WaitAndVisibilityActions.setImplicitWait(webDriver,10);
-        return new HomePage(Navigation.webDriver);
     }
 
-    public static ProductsPage navigateToProductsPageFromHomePage(HomePage homePage){
-        AutomatedActions.ClickingActions.clickOnElement(homePage.getElement(homePage.productsBtn));
-        return new ProductsPage(Navigation.webDriver);
+    @Attachment(value = "Screenshot", type = "image/png")
+    public byte[] attachScreenshot() {
+        return ((TakesScreenshot) this.webDriver).getScreenshotAs(OutputType.BYTES);
     }
 
-    public static SignupLoginPage navigateToSignupLoginPageFromHomePage(HomePage homePage){
-        AutomatedActions.ClickingActions.clickOnElement(homePage.getElement(homePage.singUpLoginBtn));
-        return new SignupLoginPage(Navigation.webDriver);
-    }
-
-    public static SignupEnterAccountInfoPage navigateToSignupEnterAccountInfoPageFromSignupLoginPage(SignupLoginPage signupLoginPage){
-        AutomatedActions.ClickingActions.clickOnElement(signupLoginPage.getElement(signupLoginPage.signupBtn));
-        return new SignupEnterAccountInfoPage(Navigation.webDriver);
-    }
-    public static AccountCreatedPage navigateToAccountCreatedPageFromSignupEnterAccountInfoPage(SignupEnterAccountInfoPage signupEnterAccountInfoPage){
-        AutomatedActions.ClickingActions.clickOnElement(signupEnterAccountInfoPage.getElement(signupEnterAccountInfoPage.submitBtn));
-        return new AccountCreatedPage(Navigation.webDriver);
-    }
-    public static HomePage navigateToHomePageFromAccountCreatedPage(AccountCreatedPage accountCreatedPage){
-        AutomatedActions.ClickingActions.clickOnElement(accountCreatedPage.getElement(accountCreatedPage.continueBtn));
-        return new HomePage(Navigation.webDriver);
-    }
-
-    public static AccountDeletedPage navigateToAccountDeletedPageFromHomePage(HomePage homePage){
-        AutomatedActions.ClickingActions.clickOnElement(homePage.getElement(homePage.deleteAccountBtn));
-        return new AccountDeletedPage(Navigation.webDriver);
-    }
-
-    public static HomePage navigateToHomePageFromAccountDeletedPage(AccountDeletedPage accountDeletedPage){
-        AutomatedActions.ClickingActions.clickOnElement(accountDeletedPage.getElement(accountDeletedPage.continueBtn));
-        return new HomePage(Navigation.webDriver);
-    }
-
-    public static HomePage navigateToHomePageFromSignupLoginPage(SignupLoginPage signupLoginPage){
-        AutomatedActions.ClickingActions.clickOnElement(signupLoginPage.getElement(signupLoginPage.loginBtn));
-        return new HomePage(Navigation.webDriver);
-    }
-
-    public static void closeBrowser(){
-        Navigation.webDriver.quit();
-    }
 }

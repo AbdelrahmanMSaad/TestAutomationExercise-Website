@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="C:/Users/AbdElRahman/IdeaProjects/Selenium_Java_Maven_TestNG_ExtentReports_POM">
+<suite name="All Test Suite" parallel="false" thread-count="200">
+    <test verbose="2" preserve-order="true" name="C:/Users/AbdElRahman/IdeaProjects/TestAutomationExercise-Website">
         <classes>
-            <class name="testCases.TestAutomationExercise">
+            <class name="testCases.TestCases1">
                 <methods>
                     <include name="test_1"/>
                     <include name="test_2"/>
+                    <include name="test_3"/>
+                </methods>
+            </class>
+            <class name="testCases.TestCases2">
+                <methods>
+                    <include name="test_4"/>
                 </methods>
             </class>
         </classes>

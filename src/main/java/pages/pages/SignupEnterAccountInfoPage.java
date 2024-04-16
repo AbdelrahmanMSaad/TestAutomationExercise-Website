@@ -1,152 +1,148 @@
 package pages.pages;
  
-import base.Base;
+import base.Navigation;
+import handlingConfigFile.Config;
+import initializers.Initializers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.AutomatedActions;
+import AutomatedActions.AutomatedActions;
+import pages.pagesActions.SignupEnterAccountInfoPageActions;
 
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignupEnterAccountInfoPage extends Base {
-    protected WebDriver webDriver;
-    private final Map<String,By> elementsMap = new HashMap<>();
-
+public class SignupEnterAccountInfoPage {
+    public WebDriver webDriver;
+    protected final Map<String,By> elementsMap = new HashMap<>();
 
     public SignupEnterAccountInfoPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        this.webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Base.pageLoadTimeoutDuration));
+        this.webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Config.pageLoadTimeoutDuration));
         this.defineAllElements();
     }
+
+    public SignupEnterAccountInfoPageActions signupEnterAccountInfoPageActions(){
+    	return new SignupEnterAccountInfoPageActions(this.webDriver);
+	}
     
 	private final By enterAccountInfoText_xpath = By.xpath("//b[contains(.,'Enter Account Information')]");
-	public String enterAccountInfoText = "enterAccountInfoText";
+	protected String enterAccountInfoText = "enterAccountInfoText";
   
 	private final By titleText_xpath = By.xpath("//label[contains(.,'Title')]");
-	public String titleText = "titleText";
+	protected String titleText = "titleText";
   
 	private final By mrRadioBtn_id = By.id("uniform-id_gender1");
-	public String mrRadioBtn = "mrRadioBtn";
+	protected String mrRadioBtn = "mrRadioBtn";
   
 	private final By mrsRadioBtn_id = By.id("uniform-id_gender2");
-	public String mrsRadioBtn = "mrsRadioBtn";
+	protected String mrsRadioBtn = "mrsRadioBtn";
   
 	private final By nameText_xpath = By.xpath("//label[contains(.,'Name ')]");
-	public String nameText = "nameText";
+	protected String nameText = "nameText";
   
 	private final By nameInput_id = By.id("name");
-	public String nameInput = "nameInput";
+	protected String nameInput = "nameInput";
   
 	private final By emailText_xpath = By.xpath("//label[contains(.,'Email ')]");
-	public String emailText = "emailText";
+	protected String emailText = "emailText";
   
 	private final By emailInput_id = By.id("email");
-	public String emailInput = "emailInput";
+	protected String emailInput = "emailInput";
   
 	private final By passwordText_xpath = By.xpath("//label[contains(.,'Password ')]");
-	public String passwordText = "passwordText";
+	protected String passwordText = "passwordText";
   
 	private final By passwordInput_id = By.id("password");
-	public String passwordInput = "passwordInput";
+	protected String passwordInput = "passwordInput";
   
 	private final By dateOfBirthText_xpath = By.xpath("//label[contains(.,'Date of Birth')]");
-	public String dateOfBirthText = "dateOfBirthText";
+	protected String dateOfBirthText = "dateOfBirthText";
   
 	private final By daysDropdownList_id = By.id("days");
-	public String daysDropdownList = "daysDropdownList";
+	protected String daysDropdownList = "daysDropdownList";
   
 	private final By monthsDropdownList_id = By.id("months");
-	public String monthsDropdownList = "monthsDropdownList";
+	protected String monthsDropdownList = "monthsDropdownList";
   
 	private final By yearsDropdownList_id = By.id("years");
-	public String yearsDropdownList = "yearsDropdownList";
+	protected String yearsDropdownList = "yearsDropdownList";
   
 	private final By scrollToTopBtn_xpath = By.xpath("//i[contains(@class,'fa fa-angle-up')]");
-	public String scrollToTopBtn = "scrollToTopBtn";
+	protected String scrollToTopBtn = "scrollToTopBtn";
   
 	private final By newsletterCheckbox_id = By.id("newsletter");
-	public String newsletterCheckbox = "newsletterCheckbox";
+	protected String newsletterCheckbox = "newsletterCheckbox";
   
 	private final By receiveOffersCheckbox_id = By.id("optin");
-	public String receiveOffersCheckbox = "receiveOffersCheckbox";
+	protected String receiveOffersCheckbox = "receiveOffersCheckbox";
   
 	private final By addressInfoText_xpath = By.xpath("//label[contains(.,'Address Information')]");
-	public String addressInfoText = "addressInfoText";
+	protected String addressInfoText = "addressInfoText";
   
 	private final By firstNameText_xpath = By.xpath("//label[contains(.,'First name ')]");
-	public String firstNameText = "firstNameText";
+	protected String firstNameText = "firstNameText";
   
 	private final By firstNameInput_id = By.id("first_name");
-	public String firstNameInput = "firstNameInput";
+	protected String firstNameInput = "firstNameInput";
   
 	private final By lastNameText_xpath = By.xpath("//label[contains(.,'Last name ')]");
-	public String lastNameText = "lastNameText";
+	protected String lastNameText = "lastNameText";
   
 	private final By lastNameInput_id = By.id("last_name");
-	public String lastNameInput = "lastNameInput";
+	protected String lastNameInput = "lastNameInput";
   
 	private final By companyText_xpath = By.xpath("//label[contains(.,'Company')]");
-	public String companyText = "companyText";
+	protected String companyText = "companyText";
   
 	private final By companyInput_id = By.id("company");
-	public String companyInput = "companyInput";
+	protected String companyInput = "companyInput";
   
 	private final By address1Text_xpath = By.xpath("//label[contains(.,'Address ')]");
-	public String address1Text = "address1Text";
+	protected String address1Text = "address1Text";
   
 	private final By address1Input_id = By.id("address1");
-	public String address1Input = "address1Input";
+	protected String address1Input = "address1Input";
   
 	private final By address2Text_xpath = By.xpath("//label[contains(.,'Address 2')]");
-	public String address2Text = "address2Text";
+	protected String address2Text = "address2Text";
   
 	private final By address2Input_id = By.id("address2");
-	public String address2Input = "address2Input";
+	protected String address2Input = "address2Input";
   
 	private final By countryText_xpath = By.xpath("//label[contains(.,'Country ')]");
-	public String countryText = "countryText";
+	protected String countryText = "countryText";
   
 	private final By countryDropdownList_id = By.id("country");
-	public String countryDropdownList = "countryDropdownList";
+	protected String countryDropdownList = "countryDropdownList";
   
 	private final By stateText_xpath = By.xpath("//label[contains(.,'State ')]");
-	public String stateText = "stateText";
+	protected String stateText = "stateText";
   
 	private final By stateInput_id = By.id("state");
-	public String stateInput = "stateInput";
+	protected String stateInput = "stateInput";
   
 	private final By cityText_xpath = By.xpath("//label[contains(.,'City ')]");
-	public String cityText = "cityText";
+	protected String cityText = "cityText";
   
 	private final By cityInput_id = By.id("city");
-	public String cityInput = "cityInput";
+	protected String cityInput = "cityInput";
   
 	private final By zipcodeText_xpath = By.xpath("//label[contains(.,'Zipcode ')]");
-	public String zipcodeText = "zipcodeText";
+	protected String zipcodeText = "zipcodeText";
   
 	private final By zipcodeInput_id = By.id("zipcode");
-	public String zipcodeInput = "zipcodeInput";
+	protected String zipcodeInput = "zipcodeInput";
   
 	private final By mobileNumberText_xpath = By.xpath("//label[contains(.,'Mobile Number  ')]");
-	public String mobileNumberText = "mobileNumberText";
+	protected String mobileNumberText = "mobileNumberText";
   
 	private final By mobileNumberInput_id = By.id("mobile_number");
-	public String mobileNumberInput = "mobileNumberInput";
+	protected String mobileNumberInput = "mobileNumberInput";
   
 	private final By submitBtn_xpath = By.xpath("//button[contains(@data-qa,'create-account')]");
-	public String submitBtn = "submitBtn";
-  
-	public WebElement getElement(String elementKey) {
-		By elementLocator = elementsMap.get(elementKey);
-		if (elementLocator != null) {
-			return elementKey.toLowerCase().contains("btn") ?
-				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeClickable(elementLocator) :
-				AutomatedActions.WaitAndVisibilityActions.waitForAnElementToBeVisible(elementLocator);
-			}
-		return null;
-	}
+	protected String submitBtn = "submitBtn";
  
 	private void defineAllElements() {
 		this.elementsMap.put(enterAccountInfoText, enterAccountInfoText_xpath);
@@ -192,5 +188,4 @@ public class SignupEnterAccountInfoPage extends Base {
  
 
 	//Add Other Needed Methods Here
-
 }
