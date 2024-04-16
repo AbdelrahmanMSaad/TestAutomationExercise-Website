@@ -1,19 +1,16 @@
 package pages.pages;
  
-import base.Navigation;
 import handlingConfigFile.Config;
-import initializers.Initializers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import AutomatedActions.AutomatedActions;
+import pages.pagesActions.ProductsPageActions;
 
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ProductsPage {
-    public WebDriver webDriver;
+    protected WebDriver webDriver;
     protected final Map<String,By> elementsMap = new HashMap<>();
 
     public ProductsPage(WebDriver webDriver) {
@@ -21,9 +18,15 @@ public class ProductsPage {
         this.webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Config.pageLoadTimeoutDuration));
         this.defineAllElements();
     }
+
+   //Method to return the pageActions
+   public ProductsPageActions productsPageActions(){
+       	return new ProductsPageActions(this.webDriver);
+   	}
     
 	private final By searchInputField_name = By.name("search");
-	protected String searchInputField = "searchInputField";
+	public String searchInputField = "searchInputField";
+  
  
 	private void defineAllElements() {
 		this.elementsMap.put(searchInputField, searchInputField_name);

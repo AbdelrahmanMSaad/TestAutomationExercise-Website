@@ -1,12 +1,8 @@
 package pages.pages;
  
-import base.Navigation;
 import handlingConfigFile.Config;
-import initializers.Initializers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import AutomatedActions.AutomatedActions;
 import pages.pagesActions.SignupLoginPageActions;
 
 import java.time.Duration;
@@ -23,39 +19,41 @@ public class SignupLoginPage {
         this.defineAllElements();
     }
 
-    public SignupLoginPageActions signupLoginPageActions(){
-    	return new SignupLoginPageActions(this.webDriver);
-	}
+   //Method to return the pageActions
+   public SignupLoginPageActions signupLoginPageActions(){
+       	return new SignupLoginPageActions(this.webDriver);
+   	}
     
 	private final By loginText_xpath = By.xpath("//h2[contains(text(),'Login to your account')]");
-	protected String loginText = "loginText";
+	public String loginText = "loginText";
   
 	private final By loginEmailInput_xpath = By.xpath("//input[contains(@data-qa,'login-email')]");
-	protected String loginEmailInput = "loginEmailInput";
+	public String loginEmailInput = "loginEmailInput";
   
 	private final By loginPasswordInput_xpath = By.xpath("//input[contains(@data-qa,'login-password')]");
-	protected String loginPasswordInput = "loginPasswordInput";
+	public String loginPasswordInput = "loginPasswordInput";
   
 	private final By loginBtn_xpath = By.xpath("//button[contains(@data-qa,'login-button')]");
-	protected String loginBtn = "loginBtn";
+	public String loginBtn = "loginBtn";
   
 	private final By signupText_xpath = By.xpath("//h2[contains(text(),'New User Signup!')]");
-	protected String signupText = "signupText";
+	public String signupText = "signupText";
   
 	private final By signupNameInput_xpath = By.xpath("//input[contains(@data-qa,'signup-name')]");
-	protected String signupNameInput = "signupNameInput";
+	public String signupNameInput = "signupNameInput";
   
 	private final By signupEmailInput_xpath = By.xpath("//input[contains(@data-qa,'signup-email')]");
-	protected String signupEmailInput = "signupEmailInput";
+	public String signupEmailInput = "signupEmailInput";
   
 	private final By signupBtn_xpath = By.xpath("//button[contains(@data-qa,'signup-button')]");
-	protected String signupBtn = "signupBtn";
+	public String signupBtn = "signupBtn";
   
 	private final By invalidLoginText_xpath = By.xpath("//p[contains(@style,'red')][contains(.,'Your email or password is incorrect!')]");
-	protected String invalidLoginText = "invalidLoginText";
+	public String invalidLoginText = "invalidLoginText";
   
 	private final By invalidSignupText_xpath = By.xpath("//p[contains(@style,'red')][contains(.,'Email Address already exist!')]");
-	protected String invalidSignupText = "invalidSignupText";
+	public String invalidSignupText = "invalidSignupText";
+  
  
 	private void defineAllElements() {
 		this.elementsMap.put(loginText, loginText_xpath);
