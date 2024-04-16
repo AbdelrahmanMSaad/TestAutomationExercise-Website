@@ -10,6 +10,13 @@ __Page Object Model (POM) Framework:__
 - Dynamically generated page classes from JSON file containing page elements.
 - Improved maintainability and readability.
 
+__Generate Pages Java Classes:__
+
+- User only needs to add pages elements in JSON Files.
+- The Java Classes for elements are then generated automatically using Generate Java Class.
+- User then can add a class extended from the page class to add required methods and using and abstract automated actions class.
+- This insures seperation between the methods and elements for more clean code and maintainablitiy.
+
 __Automated Actions:__
 
 - AutomatedActions class for common web actions (clicking, typing, validation).
@@ -30,6 +37,14 @@ __Navigation Management:__
 **Configuration:**
 
 - Modify config.properties for browser configurations and other parameters.
+
+  
+**Adding Pages Elements and Pages Actions Classes:**
+
+- Add each page elements in JSON Files.
+- Generate Java Classes for elements from these JSON files (Done automatically via generate java files class).
+- Create PageActions Class for each Page and add your required actions.
+- Create Navigation Class for navigation between pages.
 
 **Executing Tests:**
 
